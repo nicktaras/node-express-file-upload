@@ -1,0 +1,28 @@
+{
+  "name": "node-express-file-upload",
+  "version": "1.0.0",
+  "description": "See ReadMe",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicktaras/node-express-file-upload.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "file",
+    "upload"
+  ],
+  "author": "nicholas taras",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicktaras/node-express-file-upload/issues"
+  },
+  "homepage": "https://github.com/nicktaras/node-express-file-upload#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
