@@ -1,26 +1,33 @@
+var swig = require('swig');
+var config = require('./config/config');
 var express = require('express');
 var app = express();
 var fs = require('fs');
 
+app.engine('html', swig.renderFile);
+app.set('view engine', 'html');
+
+var myLogger = function (req, res, next) { console.log('LOGGED'); next() };
+app.use(myLogger);
+
+var indexPath = "/Users/nicktaras/Documents/GitHub/fileuploader/node-express-file-upload/app/index.html";
+
 app.get('/', function (req, res) {
 
-  var responseText = 'Hello World!<br>';
-
-  var source = fs.createReadStream('/Users/nicktaras/Documents/GitHub/fileuploader/node-express-file-upload/uploaded/presentationB/akamai-logo.png');
-  var dest   = fs.createWriteStream('/Users/nicktaras/Documents/GitHub/fileuploader/node-express-file-upload/uploaded/presentationA/akamai-logo.png');
-
-  source.pipe(dest);
-  source.on('end', function() {
-    console.log('Copied file to new directory.');
-  });
-  source.on('error', function(err) {
-    console.log('err', err);
+  var searchTemplatesDir = 'app/uploaded/templates/';
+  var templateList = [];
+  fs.readdir(searchTemplatesDir ,function(err, files){
+    if (err) {
+      return console.error(err);
+    }
+    files.forEach( function (file){
+      templateList.push({ name: file, location: "/uploaded/templates/" + file});
+    });
   });
 
-  res.send(responseText)
-
+  res.render(indexPath, { templateList: templateList });
+  //res.send('Hello World!');
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-});
+app.use(express.static(__dirname + '/app')); // where files are stored - Must be defined after routes.
+app.listen(3000);

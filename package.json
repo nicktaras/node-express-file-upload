@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/nicktaras/node-express-file-upload#readme",
   "dependencies": {
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "swig": "^1.4.2"
   }
 }

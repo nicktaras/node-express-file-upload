@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+  <title>Presentation Uploader</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link href="app.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>File Uploader</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <ul class="nav nav-tabs presentation">
+        <li class="presentation-item active" role="presentation"><a href="#">Presentation A</a></li>
+        <li class="presentation-item" role="presentation"><a href="#">Presentation B</a></li>
+        <!--<li class="presentation-item" role="presentation" style="float: right"><a href="#">User Guide</a></li>-->
+      </ul>
+
+      <ul class="presentation-content" style="padding-top: 50px; list-style: none; text-align: center; height: 120px; width: 100%;border-radius: 7px;background: #eeeeee; border: 1px dotted grey; margin: 20px 0px;">
+        <li>Drop Presentation A Here</li>
+      </ul>
+
+      <ul class="presentation-content hide" style="padding-top: 50px; list-style: none; text-align: center; height: 120px; width: 100%;border-radius: 7px;background: #eeeeee; border: 1px dotted grey; margin: 20px 0px;">
+        <li>Drop Presentation B Here</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Template Downloads</div>
+        <div class="panel-body">
+          {% for template in templateList %}
+          <p style="border-bottom: 1px solid lightgrey; padding: 10px">
+            <a href="{{template.location}}" style="display: block">
+              <span class="glyphicon glyphicon glyphicon-file" aria-hidden="true"></span>
+              <span>{{template.name}}</span>
+              <span class="glyphicon glyphicon glyphicon glyphicon-download-alt" style="float:right;" aria-hidden="true"></span>
+            </a>
+          </p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!--<div class="dropzone" id="dropzone">-->
+  <!--<span>Drop the files here...</span>-->
+<!--</div>-->
+<!--<input type="file" id="addFile" multiple>-->
+<!--<div class="footer">-->
+  <!--Created by <a href="https://www.mertyazicioglu.com" target="_blank" title="Mert Yazicioglu">Mert Yazicioglu</a>-->
+<!--</div>-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="tabs.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
+
