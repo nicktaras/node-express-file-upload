@@ -1,4 +1,4 @@
 module.exports = {
   port: 3000,
-  upload_dir: './uploaded'
+  upload_dir: '/uploads'
 };

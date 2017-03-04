@@ -19,17 +19,14 @@
   <div class="row">
     <div class="col-sm-12">
       <ul class="nav nav-tabs presentation">
-        <li class="presentation-item active" role="presentation"><a href="#">Presentation A</a></li>
-        <li class="presentation-item" role="presentation"><a href="#">Presentation B</a></li>
+        <li data-drop-destination="presentationA" class="presentation-item active" role="presentation"><a href="#">Presentation A</a></li>
+        <li data-drop-destination="presentationB" class="presentation-item" role="presentation"><a href="#">Presentation B</a></li>
         <!--<li class="presentation-item" role="presentation" style="float: right"><a href="#">User Guide</a></li>-->
       </ul>
 
-      <ul class="presentation-content" style="padding-top: 50px; list-style: none; text-align: center; height: 120px; width: 100%;border-radius: 7px;background: #eeeeee; border: 1px dotted grey; margin: 20px 0px;">
-        <li>Drop Presentation A Here</li>
-      </ul>
-
-      <ul class="presentation-content hide" style="padding-top: 50px; list-style: none; text-align: center; height: 120px; width: 100%;border-radius: 7px;background: #eeeeee; border: 1px dotted grey; margin: 20px 0px;">
-        <li>Drop Presentation B Here</li>
+      <ul class="dropzone" id="dropzone" style="padding-top: 50px; list-style: none; text-align: center; height: 120px; width: 100%;border-radius: 7px;background: #eeeeee; border: 1px dotted grey; margin: 20px 0px;">
+        <li>Drop Presentation Here</li>
+        <input type="file" id="addFile" multiple>
       </ul>
 
     </div>
@@ -56,16 +53,9 @@
 
 </div>
 
-<!--<div class="dropzone" id="dropzone">-->
-  <!--<span>Drop the files here...</span>-->
-<!--</div>-->
-<!--<input type="file" id="addFile" multiple>-->
-<!--<div class="footer">-->
-  <!--Created by <a href="https://www.mertyazicioglu.com" target="_blank" title="Mert Yazicioglu">Mert Yazicioglu</a>-->
-<!--</div>-->
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="custom-utils.js"></script>
 <script src="tabs.js"></script>
 <script src="app.js"></script>
 
